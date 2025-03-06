@@ -1,9 +1,14 @@
 <template>
   <div class="home">
     <FilterNav @filterChange="current = $event" :current="current"/>
-    <div v-if="projects.length">
+    <div v-if="projects.length && current === 'all'">
       <div v-for="project in projects" :key="project.id">
     <SingleProject :project="project" @delete="handleDelete" @complete="handleComplete"/>
+  </div>
+    </div>
+    <div v-if="projects.length && current === 'complete'">
+      <div v-for="project in projects" :key="project.id">
+    <SingleProject v-if="project.complete" :project="project" @delete="handleDelete" @complete="handleComplete"/>
   </div>
     </div>
   </div>

@@ -4,13 +4,13 @@
       "id": "2",
       "title": "Make marketing email",
       "details": "Lorem ipsum",
-      "complete": false
+      "complete": true
     },
     {
       "id": "5b4a",
       "title": "bcvbc",
       "details": "cbvbc",
-      "complete": false
+      "complete": true
     }
   ]
 }
