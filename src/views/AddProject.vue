@@ -26,7 +26,7 @@ export default {
 
             fetch('http://localhost:3000/projects', {
             method: 'POST',
-            header: { 'Content-Type': 'application/json' },
+            headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(project)
             }).then(() => {
                 this.$router.push('/')
