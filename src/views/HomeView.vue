@@ -6,9 +6,14 @@
     <SingleProject :project="project" @delete="handleDelete" @complete="handleComplete"/>
   </div>
     </div>
-    <div v-if="projects.length && current === 'complete'">
+    <div v-if="projects.length && current === 'completed'">
       <div v-for="project in projects" :key="project.id">
     <SingleProject v-if="project.complete" :project="project" @delete="handleDelete" @complete="handleComplete"/>
+  </div>
+    </div>
+    <div v-if="projects.length && current === 'ongoing'">
+      <div v-for="project in projects" :key="project.id">
+    <SingleProject v-if="!project.complete" :project="project" @delete="handleDelete" @complete="handleComplete"/>
   </div>
     </div>
   </div>
