@@ -50,10 +50,15 @@ export default {
   }
   },
   mounted() {
-    fetch('http://localhost:3000/projects')
-    .then(res => res.json())
-    .then(data => this.projects = data)
-    .catch(err => console.log(err.message))
-  }
+  fetch(`https://api.jsonbin.io/v3/b/${process.env.VUE_APP_JSONBIN_ID}`, {
+    headers: {
+      'X-Master-Key': process.env.VUE_APP_JSONBIN_MASTER_KEY, // Use env variable
+      'X-Access-Key': process.env.VUE_APP_JSONBIN_ACCESS_KEY
+    }
+  })
+  .then(res => res.json())
+  .then(data => this.projects = data.record.projects) // Access 'record' key
+  .catch(err => console.log(err.message));
+}
 }
 </script>

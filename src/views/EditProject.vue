@@ -15,7 +15,7 @@ export default {
         return {
             title: '',
             details: '',
-            uri: 'http://localhost:3000/projects/' + this.id
+            uri: 'https://api.jsonbin.io/v3/b/67d048b28960c979a56f934d' + this.id
         }
     },
     methods: {
@@ -26,7 +26,7 @@ export default {
         }
         fetch(this.uri, {
             method: 'PATCH',
-            headers: { 'Content-Type': 'application/json' },
+            headers: { 'X-Master-Key': '$2a$10$gdgb7AztntbJrBTaxbitR.rM20kLV/LN2k8Ur9rpaV.U7vNBK5ryq' },
             body: JSON.stringify(project)
         }).then(() => {this.$router.push('/')
 

@@ -24,9 +24,9 @@ export default {
                 complete: false
             }
 
-            fetch('http://localhost:3000/projects', {
+            fetch('https://api.jsonbin.io/v3/b/67d048b28960c979a56f934d', {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
+            headers: { 'X-Master-Key': '$2a$10$gdgb7AztntbJrBTaxbitR.rM20kLV/LN2k8Ur9rpaV.U7vNBK5ryq' },
             body: JSON.stringify(project)
             }).then(() => {
                 this.$router.push('/')

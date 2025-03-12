@@ -7,7 +7,13 @@
 import Navbar from './components/Navbar.vue';
 
 export default {
-  components: { Navbar }
+  components: { Navbar },
+  mounted() {
+    console.log("Bin ID:", process.env.VUE_APP_JSONBIN_ID);
+console.log("Secret:", process.env.VUE_APP_JSONBIN_MASTER_KEY);
+console.log("Secret:", process.env.VUE_APP_JSONBIN_ACCESS_KEY);
+
+  }
 }
 
 </script>
